@@ -132,61 +132,65 @@ export const ServicesStack = () => {
       />
 
       {/* Modal */}
-      <AnimatePresence>
-        {selectedService && selected && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setSelectedService(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
-            >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
-                <X className="w-5 h-5 md:w-6 md:h-6" />
-              </button>
+     <AnimatePresence>
+  {selectedService && selected && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+      onClick={() => setSelectedService(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.95, opacity: 0, y: 20 }}
+        transition={{ type: "spring", damping: 30, stiffness: 300 }}
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-12 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
+      >
+        <button
+          onClick={() => setSelectedService(null)}
+          className="absolute top-4 right-4 md:top-6 md:right-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
+        >
+          <X className="w-6 h-6 text-black" strokeWidth={2.5} />
+        </button>
 
-              <div className="inline-flex p-4 bg-black/5 rounded-2xl mb-6">
-                {selected.icon}
+        <div className="inline-flex p-4 bg-black/10 rounded-2xl mb-6">
+          <div className="text-black scale-125" style={{ filter: 'brightness(0)' }}>
+            {selected.icon}
+          </div>
+        </div>
+
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 pr-8 text-black">
+          {selected.title}
+        </h2>
+        <p className="text-base md:text-lg lg:text-xl text-gray-800 mb-6 md:mb-8 leading-relaxed font-medium">
+          {selected.fullDesc}
+        </p>
+        
+        <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-black">
+          What's Included:
+        </h3>
+        <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
+          {selected.features.map((feature, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <div className="mt-1 p-1 bg-black rounded-full flex-shrink-0">
+                <Check className="w-3 h-3 md:w-4 md:h-4 text-white stroke-[3]" />
               </div>
+              <span className="text-base md:text-lg text-gray-800 font-medium">{feature}</span>
+            </li>
+          ))}
+        </ul>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 pr-8">
-                {selected.title}
-              </h2>
-              <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed">
-                {selected.fullDesc}
-              </p>
-              
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">What's Included:</h3>
-              <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                {selected.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="mt-1 p-1 bg-black rounded-full flex-shrink-0">
-                      <Check className="w-3 h-3 md:w-4 md:h-4 text-white stroke-[3]" />
-                    </div>
-                    <span className="text-base md:text-lg text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className="w-full md:w-auto px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full text-base md:text-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 md:gap-3 group">
-                <span>Get Started</span>
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <button className="w-full md:w-auto px-6 md:px-8 py-3 md:py-4 bg-black text-white rounded-full text-base md:text-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 md:gap-3 group">
+          <span>Get Started</span>
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </section>
   );
 };

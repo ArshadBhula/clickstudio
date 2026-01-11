@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div 
             className="relative cursor-pointer group"
@@ -33,9 +33,9 @@ export const Navbar = () => {
                 whileHover={{ rotate: -15 }}
                 transition={{ duration: 0.2 }}
               >
-                <MousePointer2 className="w-6 h-6" />
+                <MousePointer2 className="w-6 h-6 text-black" strokeWidth={2} />
               </motion.div>
-              <h1 className="text-2xl font-bold tracking-tight">
+              <h1 className="text-2xl font-bold tracking-tight text-black">
                 <span className="group-hover:text-gray-600 transition-colors">Click</span>
                 <span className="ml-1">Studio</span>
               </h1>
@@ -44,7 +44,7 @@ export const Navbar = () => {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xs text-gray-500 mt-0.5 hidden sm:block"
+              className="text-xs text-gray-700 mt-0.5 hidden sm:block font-medium"
             >
               Making people click on your business
             </motion.p>
@@ -63,10 +63,16 @@ export const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#services" className="hover:text-gray-600 transition-colors">Services</a>
-            <a href="#about" className="hover:text-gray-600 transition-colors">About</a>
-            <a href="#team" className="hover:text-gray-600 transition-colors">Team</a>
-            <a href="#contact" className="px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors">
+            <a href="#services" className="text-black font-medium hover:text-gray-600 transition-colors">
+              Services
+            </a>
+            <a href="#about" className="text-black font-medium hover:text-gray-600 transition-colors">
+              About
+            </a>
+            <a href="#team" className="text-black font-medium hover:text-gray-600 transition-colors">
+              Team
+            </a>
+            <a href="#contact" className="px-6 py-2 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors">
               Contact
             </a>
           </div>
@@ -76,7 +82,7 @@ export const Navbar = () => {
             className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-black" strokeWidth={2.5} /> : <Menu className="w-6 h-6 text-black" strokeWidth={2.5} />}
           </button>
         </div>
       </nav>
@@ -89,33 +95,33 @@ export const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-[73px] left-0 right-0 z-40 bg-white border-b border-gray-100 md:hidden overflow-hidden"
+            className="fixed top-[73px] left-0 right-0 z-40 bg-white border-b border-gray-200 md:hidden overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               <a 
-  href="#services" 
-  className="text-lg py-2 text-black font-medium hover:text-gray-600 transition-colors"
-  onClick={() => setMobileMenuOpen(false)}
->
-  Services
-</a>
+                href="#services" 
+                className="text-lg py-2 text-black font-semibold hover:text-gray-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
+              </a>
               <a 
                 href="#about" 
-                className="text-lg py-2 hover:text-gray-600 transition-colors"
+                className="text-lg py-2 text-black font-semibold hover:text-gray-600 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#team" 
-                className="text-lg py-2 hover:text-gray-600 transition-colors"
+                className="text-lg py-2 text-black font-semibold hover:text-gray-600 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Team
               </a>
               <a 
                 href="#contact" 
-                className="text-lg py-2 px-6 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-center"
+                className="text-lg py-2 px-6 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
