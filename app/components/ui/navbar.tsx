@@ -93,12 +93,12 @@ export const Navbar = () => {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               <a 
-                href="#services" 
-                className="text-lg py-2 hover:text-gray-600 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Services
-              </a>
+  href="#services" 
+  className="text-lg py-2 text-black font-medium hover:text-gray-600 transition-colors"
+  onClick={() => setMobileMenuOpen(false)}
+>
+  Services
+</a>
               <a 
                 href="#about" 
                 className="text-lg py-2 hover:text-gray-600 transition-colors"

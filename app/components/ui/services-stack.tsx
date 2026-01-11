@@ -117,7 +117,9 @@ export const ServicesStack = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-8 md:mb-12"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">Our Services</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-black">
+  Our Services
+</h2>
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           Swipe through our services or switch views to explore what we offer
         </p>

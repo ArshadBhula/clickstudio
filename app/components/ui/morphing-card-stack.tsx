@@ -174,10 +174,10 @@ export function MorphingCardStack({
                 >
                   <div className="flex flex-col h-full p-5 sm:p-6">
                     {card.icon && (
-                      <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-black/5 mb-4">
-                        {card.icon}
-                      </div>
-                    )}
+  <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-black/10 text-black">
+    {card.icon}
+  </div>
+)}
                     <div className="flex-1 flex flex-col overflow-hidden">
                       <h3 className="font-bold text-base sm:text-lg md:text-xl text-black mb-2 sm:mb-3 break-words">
                         {card.title}
